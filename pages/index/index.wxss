@@ -1,0 +1,27 @@
+page {
+  background-color: #EDEDED;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.desc {
+  font-size: 30rpx;
+  color: #666;
+}
+
+.btn {
+  text-align: center;
+  width: 180rpx;
+  height: 60rpx;
+  margin-top: 50px;
+  border-radius: 17rpx;
+  background-color: darkgrey;
+}
+
+.btn-text {
+  font-size: 40rpx;
+}

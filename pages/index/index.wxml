@@ -1,0 +1,6 @@
+<view class="container">
+  <text class="desc">注意：本项目是本人用来练习的，数据接来自网络</text>
+  <view class="btn" catchtap="onStartTap">
+    <text class="btn-text">开始</text>
+  </view>
+</view>

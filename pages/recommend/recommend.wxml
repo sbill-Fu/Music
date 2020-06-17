@@ -1,0 +1,57 @@
+<view class="{{showPlayer ? 'bottom-container' : ''}}">
+	<view class="search-wrap">
+		<icon class="search-img" type="search" size="22" color="#B6B8C3"></icon>
+		<input class="search" placeholder="搜索歌曲" placeholder-class="place-search"></input>
+	</view>
+
+	<view class="recommend-list">
+		<view class="rmd-head">
+			<text class="rmd-txt">歌曲推荐</text>
+			<view class="more">
+				<text class="more-text">更多</text>
+				<image class="right-icon" src="/images/icon/right-icon.png"></image>
+			</view>
+		</view>
+
+		<block wx:for="{{musics}}" wx:for-item="music">
+			<view class="music-item" catchtap="onMusicTap" data-music="{{music}}">
+				<image class="music-img" src="{{music.imgUrl}}"></image>
+				<view class="music-info">
+					<text class="music-name">{{music.name}}</text>
+					<text class="singer">{{music.singer}}</text>
+				</view>
+				<image class="music-right-icon" src="/images/icon/right-icon.png"></image>
+			</view>
+		</block>
+		<block wx:for="{{musics}}" wx:for-item="music">
+			<view class="music-item" catchtap="onMusicTap" data-music="{{music}}">
+				<image class="music-img" src="{{music.imgUrl}}"></image>
+				<view class="music-info">
+					<text class="music-name">{{music.name}}</text>
+					<text class="singer">{{music.singer}}</text>
+				</view>
+				<image class="music-right-icon" src="/images/icon/right-icon.png"></image>
+			</view>
+		</block>
+		<!-- <view class="music-item">
+			<image class="music-img" src="/images/不要说话.jpg"></image>
+			<view class="music-info">
+				<text class="music-name">不要说话</text>
+				<text class="singer">陈奕迅</text>
+			</view>
+			<image class="music-right-icon" src="/images/icon/right-icon.png"></image>
+		</view> -->
+	</view>
+
+	<view wx:if="{{showPlayer}}" class="music-bottom">
+		<view class="control-left">
+			<image class="playing-img" src="{{music.imgUrl}}" ></image>
+			<text class="playing-text">{{music.name}}</text>
+		</view>
+		<view class="control-right">
+			<image class="music-stop" wx:if="{{isPlaying}}" src="/images/music/stop.png" catchtap="onControlTap"></image>
+			<image class="music-start" wx:else src="/images/music/start.png" catchtap="onControlTap"></image>
+			<image class="play-list" src="/images/music/playList.png"></image>
+		</view>
+	</view>
+</view>

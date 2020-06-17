@@ -1,0 +1,174 @@
+page {
+  background-color: #f9fafc;
+}
+
+.bottom-container {
+  margin-bottom: 120rpx;
+}
+
+.search-wrap {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 40rpx auto;
+  width: 658rpx;
+  height: 80rpx;
+  border: 1px solid #F3F4F6;
+  border-radius: 50rpx;
+  background-color: #F3F4F6;
+}
+
+.search {
+  width: 400rpx;
+  text-align: left;
+}
+
+.search-img {
+  text-align: right;
+  width: 307rpx;
+}
+
+.place-search {
+  font-size: 13px;
+}
+
+.recommend-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.rmd-head {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 7px;
+  margin-bottom: 10px;
+}
+
+.rmd-txt {
+  width: 200rpx;
+  font-size: 30rpx;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.more {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.more-text {
+  font-size: 27rpx;
+  color: #666;
+  margin-right: 3px;
+  letter-spacing: 2px;
+}
+
+.right-icon {
+  margin-right: 10px;
+  width: 20rpx;
+  height: 25rpx;
+}
+
+.music-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 10px;
+  background-color: #fff;
+}
+
+.music-img {
+  width: 120rpx;
+  height: 120rpx;
+  margin-left: 10px;
+  border-radius: 18rpx;
+}
+
+.music-control {
+  position: absolute;
+  width: 50rpx;
+  height: 50rpx;
+  margin-left: 86rpx;
+  margin-top: 33rpx;
+}
+
+.music-info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.music-name {
+  font-size: 30rpx;
+  word-spacing: 3px;
+}
+
+.singer {
+  font-size: 22rpx;
+  color: #666;
+  letter-spacing: 1px;
+}
+
+.music-right-icon {
+  width: 20rpx;
+  height: 25rpx;
+  position: absolute;
+  right: 9px;
+}
+
+.music-bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #F9F9F9;
+  position: fixed;
+  width: 100%;
+  height: 100rpx;
+  bottom: 0;
+  border-radius: 0;
+}
+
+.control-left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.playing-img {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 100rpx;
+}
+
+.playing-text {
+  font-size: 13px;
+  margin-left: 15px;
+}
+
+.control-right {
+  display: flex;
+  flex-direction: row;
+  margin-right: 15px;
+}
+
+.music-stop {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.music-start {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.play-list {
+  width: 50rpx;
+  height: 50rpx;
+  margin-left: 15px;
+}
