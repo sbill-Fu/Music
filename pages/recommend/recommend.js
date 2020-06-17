@@ -9,9 +9,9 @@ Page({
     music: {}
   },
   onLoad(options) {
-    this.setData(data); // 将本地数据放到 data 中
+    console.log('recommend load');
 
-     
+    this.setData(data); // 将本地数据放到 data 中
 
     // 在公共数据那边保存音乐是否播放的状态，以此来决定是否显示本页的播放器
     if (app.globalData.showPlayer) {
@@ -19,6 +19,11 @@ Page({
         showPlayer: true
       });
     }
+  },
+  onShow() {
+    this.setData({
+      isPlaying: app.globalData.isPlaying
+    });
   },
   onMusicTap(event) {
     const music = event.currentTarget.dataset.music;
@@ -33,6 +38,8 @@ Page({
     this.setData({
       music: music
     });
+    wx.setStorageSync('music', music);
+    wx.setStorageSync('isPlaying', true);
   },
   onControlTap(event) {
     if (this.data.isPlaying){
@@ -40,11 +47,13 @@ Page({
       this.setData({
         isPlaying: false
       });
+      app.globalData.isPlaying = false;
     } else {
       wx.playBackgroundAudio();
       this.setData({
         isPlaying: true
       });
+      app.globalData.isPlaying = true;
     }
   },
   playMusic({name, singer, imgUrl, url}) {
@@ -60,5 +69,6 @@ Page({
       showPlayer: true
     });
     app.globalData.showPlayer = true;
+    app.globalData.isPlaying = true;
   }
 })

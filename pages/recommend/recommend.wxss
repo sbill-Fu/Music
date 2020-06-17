@@ -1,3 +1,5 @@
+@import "/template/music-bottom/music-bottom-template.wxss";
+
 page {
   background-color: #f9fafc;
 }
@@ -120,55 +122,3 @@ page {
   right: 9px;
 }
 
-.music-bottom {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #F9F9F9;
-  position: fixed;
-  width: 100%;
-  height: 100rpx;
-  bottom: 0;
-  border-radius: 0;
-}
-
-.control-left {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-left: 10px;
-}
-
-.playing-img {
-  width: 100rpx;
-  height: 100rpx;
-  border-radius: 100rpx;
-}
-
-.playing-text {
-  font-size: 13px;
-  margin-left: 15px;
-}
-
-.control-right {
-  display: flex;
-  flex-direction: row;
-  margin-right: 15px;
-}
-
-.music-stop {
-  width: 50rpx;
-  height: 50rpx;
-}
-
-.music-start {
-  width: 50rpx;
-  height: 50rpx;
-}
-
-.play-list {
-  width: 50rpx;
-  height: 50rpx;
-  margin-left: 15px;
-}

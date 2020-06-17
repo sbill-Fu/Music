@@ -4,6 +4,7 @@ App({
     
   },
   globalData: {
-    showPlayer: false
+    showPlayer: false,
+    isPlaying: false
   }
 })

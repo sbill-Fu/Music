@@ -1,11 +1,5 @@
-<view class="music-bottom" catchtap="onBottomTap">
-	<view class="control-left">
-		<!-- <image class="playing-img" src="/images/素颜.jpg"></image> -->
-		<text class="playing-text">素颜</text>
-	</view>
-	<view class="control-right">
-		<image class="music-stop" wx:if="{{isPlaying}}" src="/images/music/stop.png"></image>
-		<image class="music-start" wx:else src="/images/music/播放.png"></image>
-		<image class="play-list" src="/images/music/播放列表.png"></image>
-	</view>
+<import src="/template/music-bottom/music-bottom-template.wxml" />
+
+<view wx:if="{{showPlayer}}">
+	<template is="musicBottomTemplate" data="{{music: music, isPlaying: isPlaying}}" />
 </view>
