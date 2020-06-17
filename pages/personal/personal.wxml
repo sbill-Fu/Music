@@ -1,5 +1,48 @@
 <import src="/template/music-bottom/music-bottom-template.wxml" />
 
-<view wx:if="{{showPlayer}}">
-	<template is="musicBottomTemplate" data="{{music: music, isPlaying: isPlaying}}" />
+<view>
+	<view class="recent-play">
+		<view class="recent-info">
+			<view class="recent-left"> 
+				<text class="recent-text">最近播放</text>
+				<image class="recent-icon" src="/images/icon/info.png"></image>
+				<text class="recent-num">( 1首 )</text>
+			</view>
+			<view class="play-all">
+				<image class="play-all-icon" src="/images/music/start.png"></image>
+				<text class="play-all-text">播放全部</text>
+			</view>
+		</view>
+		<view class="recent-list">
+			<view class="music-item">
+				<text class="music-nth">1</text>
+				<view class="music-info">
+					<text class="music-name">落花流水</text>
+					<text class="singer">陈奕迅</text>
+				</view>
+				<image class="play-icon" src="/images/music/start.png"></image>
+			</view>
+			<view class="music-item">
+				<text class="music-nth">2</text>
+				<view class="music-info">
+					<text class="music-name">流年</text>
+					<text class="singer">王菲</text>
+				</view>
+				<image class="play-icon" src="/images/music/start.png"></image>
+			</view>
+			<view class="music-item">
+				<text class="music-nth">3</text>
+				<view class="music-info">
+					<text class="music-name">稻香</text>
+					<text class="singer">周杰伦</text>
+				</view>
+				<image class="play-icon" src="/images/music/start.png"></image>
+			</view>
+		</view>
+	</view>
+
+	<view wx:if="{{showPlayer}}">
+		<template is="musicBottomTemplate" data="{{music: music, isPlaying: isPlaying}}" />
+	</view>
+
 </view>

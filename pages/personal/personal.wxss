@@ -1,1 +1,105 @@
 @import "/template/music-bottom/music-bottom-template.wxss";
+
+.recent-play {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.recent-info {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.recent-left {
+  margin-left: 15px;
+}
+
+.recent-text {
+  font-size: 30rpx;
+  font-weight: bold;
+}
+
+.recent-icon {
+  width: 40rpx;
+  height: 40rpx;
+  vertical-align: middle;
+}
+
+.recent-num {
+  font-size: 22rpx;
+  color: #666;
+  vertical-align: middle;
+  margin-left: 3px;
+}
+
+.play-all {
+  margin-right: 10px;
+  background-color: #ffe31b;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  width: 200rpx;
+  height: 60rpx;
+}
+
+.play-all-icon {
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 5px;
+}
+
+.play-all-text {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.recent-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 20px;
+  margin-left: 10px;
+}
+
+.music-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 10px;
+  background-color: #fff;
+  margin-left: 14px;
+}
+
+.music-nth {
+  color: #a1a4b3;
+}
+
+.music-info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 18px;
+}
+
+.music-name {
+  font-size: 30rpx;
+  word-spacing: 3px;
+}
+
+.singer {
+  font-size: 22rpx;
+  color: #666;
+  letter-spacing: 1px;
+}
+
+.play-icon {
+  position: absolute;
+  right: 70rpx;
+  width: 50rpx;
+  height: 50rpx;
+}

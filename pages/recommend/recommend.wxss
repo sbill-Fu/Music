@@ -90,13 +90,13 @@ page {
   border-radius: 18rpx;
 }
 
-.music-control {
+/* .music-control {
   position: absolute;
   width: 50rpx;
   height: 50rpx;
   margin-left: 86rpx;
   margin-top: 33rpx;
-}
+} */
 
 .music-info {
   display: flex;
