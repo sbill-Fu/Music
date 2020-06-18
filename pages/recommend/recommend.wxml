@@ -1,7 +1,7 @@
 <import src="/template/music-bottom/music-bottom-template.wxml" />
 
 <view class="{{showPlayer ? 'bottom-container' : ''}}"> <!--如果底部的播放器出来的话，设置margin-bottom，避免挡住一部分元素-->
-	<view class="search-wrap">
+	<view class="search-wrap" catchtap="onSearchTap">
 		<icon class="search-img" type="search" size="22" color="#B6B8C3"></icon>
 		<input class="search" placeholder="搜索歌曲" placeholder-class="place-search"></input>
 	</view>

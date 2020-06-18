@@ -1,10 +1,15 @@
 {
   "pages": [
     "pages/recommend/recommend",
+    "pages/recommend/search/search",
     "pages/index/index",
-    "pages/personal/personal"
+    "pages/personal/personal",
+    "pages/recommend/detail/detail"
   ],
-  "requiredBackgroundModes": ["audio", "location"],
+  "requiredBackgroundModes": [
+    "audio",
+    "location"
+  ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#EDEDED",
@@ -13,16 +18,19 @@
   "style": "v2",
   "sitemapLocation": "sitemap.json",
   "tabBar": {
-    "list": [{
-      "pagePath": "pages/recommend/recommend",
-      "text": "推荐",
-      "iconPath": "images/icon/home.png",
-      "selectedIconPath": "images/icon/home-sl.png"
-    }, {
-      "pagePath": "pages/personal/personal",
-      "text": "我的",
-      "iconPath": "images/icon/my.png",
-      "selectedIconPath": "images/icon/my-sl.png"
-    }]
+    "list": [
+      {
+        "pagePath": "pages/recommend/recommend",
+        "text": "推荐",
+        "iconPath": "images/icon/home.png",
+        "selectedIconPath": "images/icon/home-sl.png"
+      },
+      {
+        "pagePath": "pages/personal/personal",
+        "text": "我的",
+        "iconPath": "images/icon/my.png",
+        "selectedIconPath": "images/icon/my-sl.png"
+      }
+    ]
   }
 }

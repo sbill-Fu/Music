@@ -1,0 +1,6 @@
+<view>
+  <view class="music-img">
+    <image class="music-control-icon" src="/images/music/stop.png"></image>
+    <image class="music-cover" src="/images/suyan.jpg"></image>
+  </view>
+</view>

@@ -1,0 +1,38 @@
+.music-img {
+  margin-top: 30px;
+}
+
+.music-control-icon {
+  width: 100rpx;
+  height: 100rpx;
+  position: absolute;
+  top: 250rpx;
+  left: 50%;
+  margin-left: -50rpx;
+  z-index: 1;
+}
+
+@-webkit-keyframes rotation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+.music-cover {
+  -webkit-transform: rotate(360deg);
+  animation: rotation 20s linear infinite;
+  -moz-animation: rotation 20s linear infinite;
+  -webkit-animation: rotation 20s linear infinite;
+  -o-animation: rotation 20s linear infinite;
+}
+
+.music-cover {
+  display: block;
+  margin: 0 auto;
+  width: 500rpx;
+  height: 500rpx;
+  border-radius: 500rpx;
+}

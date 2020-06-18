@@ -1,0 +1,19 @@
+<view>
+  <view class="search-container">
+    <icon type="search" size="22"></icon>
+    <input class="search-input" type="text" placeholder="搜索歌曲/歌手" placeholder-class="placeholder-text"></input>
+  </view>
+  <view class="hot-container">
+    <text class="hot-title">热门搜索</text>
+    <view class="hot-items">
+      <view class="hot-item">周杰伦新歌</view>
+      <view class="hot-item">孤独的烟寂寞的酒</view>
+      <view class="hot-item">旧梦一场</view>
+      <view class="hot-item">少年</view>
+      <view class="hot-item">夏天的风</view>
+      <view class="hot-item">稻香</view>
+      <view class="hot-item">乘风破浪向你飘</view>
+      <view class="hot-item">富士山下</view>
+    </view>
+  </view>
+</view>

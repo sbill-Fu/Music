@@ -6,7 +6,7 @@
 			<view class="recent-left"> 
 				<text class="recent-text">最近播放</text>
 				<image class="recent-icon" src="/images/icon/info.png"></image>
-				<text class="recent-num">( 1首 )</text>
+				<text class="recent-num">{{'( ' + palyedMusicsid.length + ' )'}}</text>
 			</view>
 			<view class="play-all">
 				<image class="play-all-icon" src="/images/music/start.png"></image>
@@ -14,30 +14,16 @@
 			</view>
 		</view>
 		<view class="recent-list">
-			<view class="music-item">
-				<text class="music-nth">1</text>
-				<view class="music-info">
-					<text class="music-name">落花流水</text>
-					<text class="singer">陈奕迅</text>
+			<block wx:for="{{palyedMusicsid}}" wx:for-item="key" wx:for-index="idx">
+				<view class="music-item">
+					<text class="music-nth">{{idx+1}}</text>
+					<view class="music-info">
+						<text class="music-name">{{palyedMusics[key].name}}</text>
+						<text class="singer">{{palyedMusics[key].singer}}</text>
+					</view>
+					<image class="play-icon" src="/images/music/start.png"></image>
 				</view>
-				<image class="play-icon" src="/images/music/start.png"></image>
-			</view>
-			<view class="music-item">
-				<text class="music-nth">2</text>
-				<view class="music-info">
-					<text class="music-name">流年</text>
-					<text class="singer">王菲</text>
-				</view>
-				<image class="play-icon" src="/images/music/start.png"></image>
-			</view>
-			<view class="music-item">
-				<text class="music-nth">3</text>
-				<view class="music-info">
-					<text class="music-name">稻香</text>
-					<text class="singer">周杰伦</text>
-				</view>
-				<image class="play-icon" src="/images/music/start.png"></image>
-			</view>
+			</block>
 		</view>
 	</view>
 
