@@ -7,6 +7,7 @@ App({
     showPlayer: false,
     isPlaying: false,
     playingId: null,
-    music: {}
+    music: {},
+    playlist: []
   }
 })

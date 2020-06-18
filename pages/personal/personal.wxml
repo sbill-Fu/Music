@@ -8,7 +8,7 @@
 				<image class="recent-icon" src="/images/icon/info.png"></image>
 				<text class="recent-num">{{'( ' + palyedMusicsid.length + '首' + ' )'}}</text>
 			</view>
-			<view class="play-all">
+			<view class="play-all" catchtap="onPlayAllTap">
 				<image class="play-all-icon" src="/images/music/start.png"></image>
 				<text class="play-all-text">播放全部</text>
 			</view>
@@ -29,7 +29,7 @@
 	</view>
 
 	<view wx:if="{{showPlayer}}">
-		<template is="musicBottomTemplate" data="{{music: music, isPlaying: isPlaying}}" />
+		<template is="musicBottomTemplate" data="{{music: music, isPlaying: isPlaying, showPlaylist: showPlaylist, playlist: playlist}}" />
 	</view>
 
 </view>
