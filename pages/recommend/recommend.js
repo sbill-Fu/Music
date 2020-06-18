@@ -2,6 +2,7 @@ import {
   data
 } from './music.js';
 const app = getApp();
+let util = require('../../utils/util.js');
 
 Page({
   data: {
@@ -11,18 +12,15 @@ Page({
     music: {}
   },
   onLoad(options) {
-    this.setData(data); // 将本地数据放到 data 中
-
-    // 在公共数据那边保存音乐是否播放的状态，以此来决定是否显示本页的播放器
-    if (app.globalData.showPlayer) {
-      this.setData({
-        showPlayer: true
-      });
-    }
+    this.setData(data); // 将本地数据库中的数据放到 data 中
   },
   onShow() {
+    
     this.setData({
-      isPlaying: app.globalData.isPlaying //及时更新状态，绑定变量那边需要
+      //及时更新状态，绑定变量那边需要
+      isPlaying: app.globalData.isPlaying,
+      music: app.globalData.music,
+      showPlayer: app.globalData.showPlayer
     });
   },
   onMusicTap(event) {
@@ -39,15 +37,18 @@ Page({
         return;
       }
     }
-    this.playMusic(music);
+    util.playMusic(music);
+    // 及时更新状态
     this.setData({
+      isPlaying: true,
+      showPlayer: true,
       music: music
     });
-    wx.setStorageSync('music', music); // 给personal页面底部使用，不使用全局变量，使用缓存试试
-    this.recordPlay(music);
-
+    this.recordPlay(music); // 最近播放记录
+    console.log('tap: ', this.data.showPlayer);
   },
   onControlTap(event) {
+    // 这个是点击底部的控制按钮触发，只会改变播放状态，不会改变歌曲
     if (this.data.isPlaying) {
       wx.pauseBackgroundAudio();
       this.setData({
@@ -66,28 +67,6 @@ Page({
     wx.navigateTo({
       url: 'search/search'
     })
-  },
-  playMusic({
-    name,
-    singer,
-    imgUrl,
-    url
-  }) {
-    const backgroundAudioManager = wx.getBackgroundAudioManager();
-    backgroundAudioManager.title = name;
-    backgroundAudioManager.epname = name;
-    backgroundAudioManager.singer = singer;
-    backgroundAudioManager.coverImgUrl = imgUrl;
-    // 设置了 src 之后会自动播放
-    backgroundAudioManager.src = url;
-
-    // 及时更新状态
-    this.setData({
-      isPlaying: true,
-      showPlayer: true
-    });
-    app.globalData.showPlayer = true;
-    app.globalData.isPlaying = true;
   },
   recordPlay(music) {
     // 添加到缓存，记录最近播放的歌曲

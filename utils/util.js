@@ -1,19 +1,21 @@
-const formatTime = date => {
-  const year = date.getFullYear()
-  const month = date.getMonth() + 1
-  const day = date.getDate()
-  const hour = date.getHours()
-  const minute = date.getMinutes()
-  const second = date.getSeconds()
+const app = getApp();
 
-  return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':')
-}
+function playMusic(music) {
+  const backgroundAudioManager = wx.getBackgroundAudioManager();
+  backgroundAudioManager.title = music.name;
+  backgroundAudioManager.epname = music.name;
+  backgroundAudioManager.singer = music.singer;
+  backgroundAudioManager.coverImgUrl = music.imgUrl;
+  // 设置了 src 之后会自动播放
+  backgroundAudioManager.src = music.url;
 
-const formatNumber = n => {
-  n = n.toString()
-  return n[1] ? n : '0' + n
+  
+  app.globalData.showPlayer = true;
+  app.globalData.isPlaying = true;
+  app.globalData.playingId = music.id;
+  app.globalData.music = music;
 }
 
 module.exports = {
-  formatTime: formatTime
+  playMusic: playMusic
 }

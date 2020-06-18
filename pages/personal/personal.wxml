@@ -6,7 +6,7 @@
 			<view class="recent-left"> 
 				<text class="recent-text">最近播放</text>
 				<image class="recent-icon" src="/images/icon/info.png"></image>
-				<text class="recent-num">{{'( ' + palyedMusicsid.length + ' )'}}</text>
+				<text class="recent-num">{{'( ' + palyedMusicsid.length + '首' + ' )'}}</text>
 			</view>
 			<view class="play-all">
 				<image class="play-all-icon" src="/images/music/start.png"></image>
@@ -21,7 +21,8 @@
 						<text class="music-name">{{palyedMusics[key].name}}</text>
 						<text class="singer">{{palyedMusics[key].singer}}</text>
 					</view>
-					<image class="play-icon" src="/images/music/start.png"></image>
+					<image wx:if="{{ palyedMusics[key].id == playingId && isPlaying }}" class="control-icon" src="/images/music/stop.png" catchtap="onStopTap" data-music="{{palyedMusics[key]}}"></image>
+					<image wx:else  class="control-icon" src="/images/music/start.png" catchtap="onStartTap" data-music="{{palyedMusics[key]}}"></image>
 				</view>
 			</block>
 		</view>

@@ -97,7 +97,7 @@
   letter-spacing: 1px;
 }
 
-.play-icon {
+.control-icon {
   position: absolute;
   right: 70rpx;
   width: 50rpx;

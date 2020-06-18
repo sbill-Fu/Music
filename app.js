@@ -5,6 +5,7 @@ App({
   },
   globalData: {
     showPlayer: false,
-    isPlaying: false
+    isPlaying: false,
+    playingId: null
   }
 })
