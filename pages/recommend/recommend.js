@@ -1,6 +1,6 @@
 import {
   data
-} from './music.js';
+} from '../../data/music.js';
 const app = getApp();
 let util = require('../../utils/util.js');
 
@@ -30,6 +30,7 @@ Page({
     wx.navigateTo({
       url: 'detail/detail'
     });
+    app.globalData.music = music;
 
     // 如果歌曲正在播放，就不要执行播放的函数了
     if (this.data.isPlaying) {
@@ -45,7 +46,6 @@ Page({
       music: music
     });
     this.recordPlay(music); // 最近播放记录
-    console.log('tap: ', this.data.showPlayer);
   },
   onControlTap(event) {
     // 这个是点击底部的控制按钮触发，只会改变播放状态，不会改变歌曲
@@ -66,6 +66,11 @@ Page({
   onSearchTap(event) {
     wx.navigateTo({
       url: 'search/search'
+    })
+  },
+  onToDetail() {
+    wx.navigateTo({
+      url: 'detail/detail'
     })
   },
   recordPlay(music) {

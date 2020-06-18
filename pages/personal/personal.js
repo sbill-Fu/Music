@@ -68,6 +68,11 @@ Page({
   onStopTap() {
     this.musicStop();
   },
+  onToDetail() {
+    wx.navigateTo({
+      url: '../recommend/detail/detail'
+    })
+  },
   musicStart() {
     wx.playBackgroundAudio();
     this.setData({

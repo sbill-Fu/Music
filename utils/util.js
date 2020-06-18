@@ -9,6 +9,10 @@ function playMusic(music) {
   // 设置了 src 之后会自动播放
   backgroundAudioManager.src = music.url;
 
+  backgroundAudioManager.onEnded(() => {
+    app.globalData.isPlaying = false;
+  });
+
   
   app.globalData.showPlayer = true;
   app.globalData.isPlaying = true;
@@ -16,6 +20,18 @@ function playMusic(music) {
   app.globalData.music = music;
 }
 
+function musicStart() {
+  wx.playBackgroundAudio();
+  app.globalData.isPlaying = true;
+}
+
+function musicStop() {
+  wx.pauseBackgroundAudio();
+  app.globalData.isPlaying = false;
+}
+
 module.exports = {
-  playMusic: playMusic
+  playMusic: playMusic,
+  musicStop: musicStop,
+  musicStart: musicStart
 }

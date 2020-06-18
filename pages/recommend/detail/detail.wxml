@@ -1,6 +1,10 @@
 <view>
+  <view class="singer">
+    <text>{{music.singer}}</text>
+  </view>
   <view class="music-img">
-    <image class="music-control-icon" src="/images/music/stop.png"></image>
-    <image class="music-cover" src="/images/suyan.jpg"></image>
+    <image wx:if="{{isPlaying}}" class="music-control-icon" src="/images/music/stop.png" catchtap="onStopTap"></image>
+    <image wx:else class="music-control-icon" src="/images/music/start.png" catchtap="onStartTap"></image>
+    <image class="music-cover" src="{{music.imgUrl}}"></image>
   </view>
 </view>
