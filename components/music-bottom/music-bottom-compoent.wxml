@@ -1,0 +1,19 @@
+<view class="music-bottom">
+	<view class="control-left" catchtap="onToDetail">
+		<image class="playing-img" src="{{music.imgUrl}}"></image>
+		<text class="playing-text">{{music.name}}</text>
+	</view>
+	<view class="control-right">
+		<image class="music-stop" wx:if="{{isPlaying}}" src="/images/music/stop.png" catchtap="onControlTap"></image>
+		<image class="music-start" wx:else src="/images/music/start.png" catchtap="onControlTap"></image>
+		<image class="play-list" src="/images/music/playList.png" catchtap="onPlaylistTap"></image>
+	</view>
+	<view wx:if="{{showPlaylist}}" class="playlist">
+		<block wx:for="{{playlist}}" wx:for-item="music">
+			<view class="play-item">
+				<text>{{music.name + '-' + music.singer}}</text>
+			</view>
+		</block>
+		<text class="close" catchtap="onClosePlaylistTap">关闭</text>
+	</view>
+</view>

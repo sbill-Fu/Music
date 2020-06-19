@@ -27,7 +27,12 @@
 		</block>
 	</view>
 
+
 	<view wx:if="{{showPlayer}}">
-		<template is="musicBottomTemplate" data="{{music: music, isPlaying: isPlaying}}"></template>
+		<!-- <template is="musicBottomTemplate" data="{{music: music, isPlaying: isPlaying}}"></template> -->
+		<music-bottom isPlaying="{{isPlaying}}" musics="{{musics}}"
+    showPlayer="{{showPlayer}}"
+    music="{{music}}"/>
 	</view>
+
 </view>

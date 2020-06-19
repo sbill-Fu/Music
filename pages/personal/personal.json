@@ -1,3 +1,5 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "music-bottom": "/components/music-bottom/music-bottom-compoent"
+  }
 }

@@ -8,6 +8,7 @@ App({
     isPlaying: false,
     playingId: null,
     music: {},
-    playlist: []
+    playlist: [],
+    pageModels: {}
   }
 })

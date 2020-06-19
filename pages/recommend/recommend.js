@@ -9,18 +9,21 @@ Page({
     isPlaying: false,
     musics: [],
     showPlayer: false,
-    music: {}
+    music: {},
+    playlist: []
   },
   onLoad(options) {
     this.setData(data); // 将本地数据库中的数据放到 data 中
+
+    util.setPageModel(this.__route__, this);
   },
   onShow() {
-    
     this.setData({
-      //及时更新状态，绑定变量那边需要
+      //及时更新状态，子组件那边能够接收到变化
       isPlaying: app.globalData.isPlaying,
       music: app.globalData.music,
-      showPlayer: app.globalData.showPlayer
+      showPlayer: app.globalData.showPlayer,
+      playlist: app.globalData.playlist
     });
   },
   onMusicTap(event) {
@@ -47,30 +50,10 @@ Page({
     });
     this.recordPlay(music); // 最近播放记录
   },
-  onControlTap(event) {
-    // 这个是点击底部的控制按钮触发，只会改变播放状态，不会改变歌曲
-    if (this.data.isPlaying) {
-      wx.pauseBackgroundAudio();
-      this.setData({
-        isPlaying: false
-      });
-      app.globalData.isPlaying = false;
-    } else {
-      wx.playBackgroundAudio();
-      this.setData({
-        isPlaying: true
-      });
-      app.globalData.isPlaying = true;
-    }
-  },
+  
   onSearchTap(event) {
     wx.navigateTo({
       url: 'search/search'
-    })
-  },
-  onToDetail() {
-    wx.navigateTo({
-      url: 'detail/detail'
     })
   },
   recordPlay(music) {
@@ -104,5 +87,10 @@ Page({
       musicsId = [...musicsIdSet];
       wx.setStorageSync('musicsId', musicsId);
     }
+  },
+  updatePlayStatus() {
+    this.setData({
+      isPlaying: app.globalData.isPlaying
+    });
   }
 })

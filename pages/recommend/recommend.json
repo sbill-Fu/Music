@@ -1,3 +1,6 @@
 {
-  "navigationBarTitleText": "音乐推荐"
+  "navigationBarTitleText": "音乐推荐",
+  "usingComponents": {
+    "music-bottom": "/components/music-bottom/music-bottom-compoent"
+  }
 }

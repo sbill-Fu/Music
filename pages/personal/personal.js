@@ -12,6 +12,9 @@ Page({
     showPlaylist: false, // 是否显示播放列表
     playlist: [] // 在播放列表中的歌曲
   },
+  onLoad() {
+    util.setPageModel(this.__route__, this);
+  },
   onShow() {
     // 获取最近播放的歌曲
     let palyedMusicsid = wx.getStorageSync('musicsId');
@@ -67,22 +70,15 @@ Page({
   onStopTap() {
     this.musicStop();
   },
-  onToDetail() {
-    wx.navigateTo({
-      url: '../recommend/detail/detail'
-    })
-  },
   onPlayAllTap() {
     // 播放全部歌曲，将第一首歌播放，且将歌曲添加至播放列表
     let musics = this.data.palyedMusics;
     let musicsId = this.data.palyedMusicsid;
     let playlist = [];
     for (let key of musicsId) {
-      console.log('key: ', key);
       playlist.push(musics[key]);
     }
-    console.log(playlist);
-    app.globalData.playlist = musics;
+    app.globalData.playlist = playlist;
     let music = musics[musicsId[0]];
     util.playMusic(music);
     this.setData({
@@ -91,16 +87,6 @@ Page({
       music: music,
       isPlaying: true,
       playlist: playlist
-    });
-  },
-  onPlaylistTap() {
-    this.setData({
-      showPlaylist: true
-    });
-  },
-  onClosePlaylistTap() {
-    this.setData({
-      showPlaylist: false
     });
   },
   musicStart() {
@@ -116,5 +102,10 @@ Page({
       isPlaying: false
     });
     app.globalData.isPlaying = false;
+  },
+  updatePlayStatus() {
+    this.setData({
+      isPlaying: app.globalData.isPlaying
+    });
   }
 })
