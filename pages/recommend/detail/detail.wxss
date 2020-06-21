@@ -27,12 +27,22 @@
   }
 }
 
-.music-cover {
-  -webkit-transform: rotate(360deg);
+.music-cover.runing {
   animation: rotation 20s linear infinite;
   -moz-animation: rotation 20s linear infinite;
   -webkit-animation: rotation 20s linear infinite;
   -o-animation: rotation 20s linear infinite;
+}
+
+.music-cover.stop {
+  animation: rotation 20s linear infinite;
+  -moz-animation: rotation 20s linear infinite;
+  -webkit-animation: rotation 20s linear infinite;
+  -o-animation: rotation 20s linear infinite;
+  animation-play-state:paused;
+  -moz-animation-play-state:paused;
+  -webkit-animation-play-state:paused;
+  -o-animation-play-state:paused;
 }
 
 .music-cover {

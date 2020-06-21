@@ -15,17 +15,28 @@ Page({
     wx.setNavigationBarTitle({
       title: music.name
     });
+
+    utils.setPageModel(this.__route__, this);
   },
   onStopTap() {
-    utils.musicStop();
+    app.globalData.backgroundAudioManager.pause();
     this.setData({
       isPlaying: false
     });
   },
   onStartTap() {
-    utils.musicStart();
+    if (app.globalData.playEnded) {
+      utils.playMusic(this.data.music);
+    } else {
+      app.globalData.backgroundAudioManager.play();
+    }
     this.setData({
       isPlaying: true
+    });
+  },
+  updatePlayStatus() {
+    this.setData({
+      isPlaying: app.globalData.isPlaying
     });
   }
 })

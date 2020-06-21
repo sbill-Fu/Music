@@ -33,16 +33,6 @@ function playMusic(music) {
   app.globalData.backgroundAudioManager = backgroundAudioManager
 }
 
-function musicStart() {
-  wx.playBackgroundAudio();
-  app.globalData.isPlaying = true;
-}
-
-function musicStop() {
-  wx.pauseBackgroundAudio();
-  app.globalData.isPlaying = false;
-}
-
 function setPageModel(path, pageModel) {
   // 将页面的 model 保存下来，在需要的时候调用页面中的方法或者获取属性
   app.globalData.pageModels[path] = pageModel;
@@ -59,7 +49,5 @@ function _updatePagePlayStatus() {
 
 module.exports = {
   playMusic: playMusic,
-  musicStop: musicStop,
-  musicStart: musicStart,
   setPageModel: setPageModel
 }

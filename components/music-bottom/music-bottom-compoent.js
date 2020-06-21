@@ -23,7 +23,7 @@ Component({
   methods: {
     onToDetail() {
       wx.navigateTo({
-        url: 'detail/detail'
+        url: '/pages/recommend/detail/detail'
       });
     },
     onControlTap(event) {

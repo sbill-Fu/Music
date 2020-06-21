@@ -5,6 +5,6 @@
   <view class="music-img">
     <image wx:if="{{isPlaying}}" class="music-control-icon" src="/images/music/stop.png" catchtap="onStopTap"></image>
     <image wx:else class="music-control-icon" src="/images/music/start.png" catchtap="onStartTap"></image>
-    <image class="music-cover" src="{{music.imgUrl}}"></image>
+    <image class="'music-cover' + ' ' + {{isPlaying? 'runing' : 'stop'}}" src="{{music.imgUrl}}"></image>
   </view>
 </view>
