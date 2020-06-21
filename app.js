@@ -6,6 +6,7 @@ App({
   globalData: {
     showPlayer: false,
     isPlaying: false,
+    playEnded: false,
     playingId: null,
     music: {},
     playlist: [],

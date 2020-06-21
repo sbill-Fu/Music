@@ -1,4 +1,5 @@
 const app = getApp();
+const utils = require('../../utils/util');
 
 Component({
   options: {
@@ -26,15 +27,19 @@ Component({
       });
     },
     onControlTap(event) {
+      // 获取到播放器的实例
+      const backgroundAudioManager = app.globalData.backgroundAudioManager;
       // 这个是点击底部的控制按钮触发，只会改变播放状态，不会改变歌曲
       if (this.data.isPlaying) {
-        wx.pauseBackgroundAudio();
+        backgroundAudioManager.pause();
         this.setData({
           isPlaying: false
         });
         app.globalData.isPlaying = false;
-      } else {
-        wx.playBackgroundAudio();
+      } else if (app.globalData.playEnded){
+        utils.playMusic(this.data.music);
+      } else{
+        backgroundAudioManager.play();
         this.setData({
           isPlaying: true
         });
