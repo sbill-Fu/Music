@@ -5,5 +5,10 @@ Page({
     wx.switchTab({
       url: '../recommend/recommend'
     })
+  },
+  onShareAppMessage() {
+    return {
+      title: '你好啊'
+    }
   }
 })

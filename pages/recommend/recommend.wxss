@@ -1,7 +1,17 @@
 @import "/template/music-bottom/music-bottom-template.wxss";
 
 page {
-  background-color: #f9fafc;
+  /* background-color: #f9fafc; */
+}
+
+.test {
+  width:119px;
+  height:19px;
+  font-size:20px;
+  white-space: nowrap;
+  /* font-family:PingFang SC; */
+  font-weight:400;
+  /* color:rgba(255,255,255,1); */
 }
 
 .bottom-container {

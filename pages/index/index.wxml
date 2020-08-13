@@ -3,4 +3,5 @@
   <view class="btn" catchtap="onStartTap">
     <text class="btn-text">开始</text>
   </view>
+  <button open-type="share">分享</button>
 </view>
